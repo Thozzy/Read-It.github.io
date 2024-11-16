@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Read It - Online Book Club</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <h1>Registration Page</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#">Categories &#9662;</a>
+          <div class="dropdown-content">
+            <a href="mission.html">Mission</a>
+            <a href="vision.html">Vision</a>
+          </div>
+        </li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Marquee Section -->
+  <div class="marquee">
+    <p>Check out our latest Book collections! Limited stock available!</p>
+  </div>
+
+  <!-- Cover Image with Text -->
+  <div class="cover-container">
+    <div id="content" align="center">
+      <form id="registrationForm">
+      <form id="registrationForm">
+      <h2>Registration</h2>
+      <input type="text" id="newUsername" placeholder="Username (Alphabet only)" pattern="[A-Za-z]+" required><br>
+      <input type="password" id="newPassword" placeholder="Password (Alphanumeric only)" pattern="[A-Za-z0-9]+" required><br>
+                          <input type="tel" id="phoneNumber" placeholder="Phone Number (Digits only)" pattern="[0-9]+" required><br>
+                          <input type="submit" value="Register">
+                      </form>
+              
+                      <form id="loginForm" action="home.html" method="post" style="display: none;">
+                          <h2>Login</h2>
+                          <input type="text" id="username" placeholder="Username"><br>
+                          <input type="password" id="password" placeholder="Password"><br>
+                          <input type="submit" value="Login">
+                      </form>
+              </div>
+          
+              <script type="text/javascript">
+                  var registeredUsername = "";
+                  var registeredPassword = "";
+          
+                  document.getElementById("registrationForm").onsubmit = function () {
+                      registeredUsername = document.getElementById("newUsername").value;
+                      registeredPassword = document.getElementById("newPassword").value;
+          
+                      document.getElementById("registrationForm").style.display = "none";
+                      document.getElementById("loginForm").style.display = "block";
+          
+                      return false; // prevent form from being submitted
+  };
+          
+                  document.getElementById("loginForm").onsubmit = function () {
+                      var username = document.getElementById("username").value;
+                      var password = document.getElementById("password").value;
+          
+                      if(username == registeredUsername && password == registeredPassword) {
+                          return true; // form will be submitted
+  } else {
+                          alert("Invalid username or password");
+                          return false; // form will not be submitted
+                      }
+  };
+              </script>
+    <img class="cover-image" src="Rkk.png" alt="Cover Image" width="1350" height="500" />
+
+      
+    </div>
+  </div>
+  <title>Registration Page</title>
+</head>
+<body>
+    
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <hr>
+    <p>&copy; 2024 Andrea Abuhbakar254. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
